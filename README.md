@@ -5,5 +5,13 @@
 - **Repository:** registry.connect.redhat.com/sonatype/nexus-repository-manager
 - **Version:** 3.41.1-ubi-1 (latest at 2022-09-120)
 
+## Deploy With OC Commands
+
+    oc import-image sonatype/nexus-repository-manager:3.41.1-ubi-1 --from=registry.connect.redhat.com/sonatype/nexus-repository-manager:3.41.1-ubi-1 --confirm
+    oc new-app sonatype/nexus
+    oc expose svc nexus
+
+Nexus dashboard will be accessible in **http://*NEXUS-ROUTE*/nexus**/
+
 # Sources:
 [Deploy Nexus With Maven](https://docs.openshift.com/container-platform/3.11/dev_guide/dev_tutorials/maven_tutorial.html)
