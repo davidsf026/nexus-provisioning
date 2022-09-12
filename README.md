@@ -8,6 +8,11 @@
 - **Repository:** registry.connect.redhat.com/sonatype/nexus-repository-manager
 - **Version:** 3.41.1-ubi-1 (latest at 2022-09-120)
 
+## Deploy With Kustomize:
+
+    git clone https://github.com/davidsf026/nexus-provisioning/
+    oc apply -k ./nexus-provisioning/kustomize
+
 ## Deploy With OC Commands:
 
     oc import-image sonatype/nexus-repository-manager:3.41.1-ubi-1 --from=registry.connect.redhat.com/sonatype/nexus-repository-manager:3.41.1-ubi-1 --confirm
