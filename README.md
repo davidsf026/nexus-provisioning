@@ -4,7 +4,7 @@
 - Project with "oraex-cicd" name.
 
 ## Informations:
- - Nexus dashboard will be accessible in **http://nexus-oraex-cicd.apps.middleware.rhbr-lab.com/nexus**
+ - Nexus dashboard will be accessible in http://nexus-oraex-cicd.apps.middleware.rhbr-lab.com/nexus
  - Default credentials are:
     - **User:** admin
     - **Password:** admin123
