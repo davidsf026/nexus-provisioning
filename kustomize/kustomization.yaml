@@ -1,5 +1,6 @@
 resources:
   - application/persistentvolumeclaim.yaml
+  - application/imagestream.yaml
   - application/deployment.yaml
   - application/service.yaml
   - application/route.yaml

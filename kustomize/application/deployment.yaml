@@ -43,5 +43,6 @@ spec:
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-      - emptyDir: {}
-        name: nexus-volume-1
+      - name: nexus-volume-1
+        persistentVolumeClaim:
+          claimName: nexus-pv
