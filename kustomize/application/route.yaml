@@ -1,0 +1,18 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: nexus
+  namespace: oraex-cicd
+  labels:
+    app: nexus
+    app.kubernetes.io/component: nexus
+    app.kubernetes.io/instance: nexus
+spec:
+  host: nexus-oraex-cicd.apps.middleware.rhbr-lab.com
+  to:
+    kind: Service
+    name: nexus
+    weight: 100
+  port:
+    targetPort: 8081-tcp
+  wildcardPolicy: None
