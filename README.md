@@ -11,7 +11,7 @@
     oc new-app sonatype/nexus
     oc expose svc nexus
 
-Nexus dashboard will be accessible in **http://*NEXUS-ROUTE*/nexus**/
+Nexus dashboard will be accessible in **http://*$NEXUS-ROUTE*/nexus**/
 
 # Sources:
 [Deploy Nexus With Maven](https://docs.openshift.com/container-platform/3.11/dev_guide/dev_tutorials/maven_tutorial.html)
