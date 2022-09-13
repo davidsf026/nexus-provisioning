@@ -1,0 +1,15 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: nexus
+  labels:
+    app: nexus
+spec:
+  host: nexus-oraex-cicd.apps.middleware.rhbr-lab.com
+  to:
+    kind: Service
+    name: nexus-svc
+    weight: 100
+  port:
+    targetPort: 8081-tcp
+  wildcardPolicy: None

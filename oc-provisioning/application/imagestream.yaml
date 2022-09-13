@@ -1,0 +1,12 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  labels:
+    app: nexus
+  name: nexus-is
+spec:
+  tags:
+  - from:
+      kind: DockerImage
+      name: registry.connect.redhat.com/sonatype/nexus-repository-manager:3.41.1-ubi-1
+    name: 3.41.1-ubi-1
