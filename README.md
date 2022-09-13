@@ -16,6 +16,7 @@
 
 ## Deploy With Kustomize:
 
+    oc new-project oraex-cicd
     git clone https://github.com/davidsf026/nexus-provisioning/
     oc apply -k ./nexus-provisioning/kustomize
 
