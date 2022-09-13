@@ -22,6 +22,7 @@
 
 ## Deploy With OC Commands:
 
+    oc new-project oqss-cicd
     oc import-image sonatype/nexus-repository-manager:3.41.1-ubi-1 --from=registry.connect.redhat.com/sonatype/nexus-repository-manager:3.41.1-ubi-1 --confirm
     oc new-app sonatype/nexus
     oc expose svc nexus
