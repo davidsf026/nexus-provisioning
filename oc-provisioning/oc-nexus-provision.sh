@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "###############################################################################"
+echo "#  MAKE SURE YOU ARE LOGGED IN:                                               #"
+echo "#  $ oc login http://console.your.openshift.com                               #"
+echo "###############################################################################"
+
 function deploy() {
     echo "############################################################"
     echo "Importing image"
