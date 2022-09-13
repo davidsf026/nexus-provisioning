@@ -6,10 +6,7 @@ echo "#  $ oc login http://console.your.openshift.com                           
 echo "###############################################################################"
 
 command.deploy() {
-  echo "############################################################"
-  echo "Creating Project"
-  echo "############################################################"
-  
+  info "Creating namespaces $cicd_prj, $dev_prj, $stage_prj"  
   oc new-project oqss-cicd --display-name="CI/CD"
   sleep 2
     
