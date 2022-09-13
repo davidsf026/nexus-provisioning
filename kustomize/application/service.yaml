@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: nexus
-  name: nexus
+  name: nexus-svc
   namespace: oraex-cicd
 spec:
   ports:
