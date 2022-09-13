@@ -1,7 +1,7 @@
 # Nexus Provisioning
 
 ## Requirements
-- A Project in your cluster OpenShift cluster.
+- A Project in your OpenShift cluster.
 
 ## Informations:
  - Nexus dashboard will be accessible in http://nexus-$YOUR_CICD_PROJECT_NAME.apps.middleware.rhbr-lab.com/nexus
