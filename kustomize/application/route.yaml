@@ -9,7 +9,7 @@ spec:
   host: nexus-oraex-cicd.apps.middleware.rhbr-lab.com
   to:
     kind: Service
-    name: nexus
+    name: nexus-svc
     weight: 100
   port:
     targetPort: 8081-tcp
