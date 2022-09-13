@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     app: nexus
-  name: nexus-pv
+  name: nexus-pvc
 spec:
   accessModes:
   - ReadWriteOnce
