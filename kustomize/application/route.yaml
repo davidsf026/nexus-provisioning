@@ -1,7 +1,7 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: nexus
+  name: nexus-route
   namespace: oraex-cicd
   labels:
     app: nexus
