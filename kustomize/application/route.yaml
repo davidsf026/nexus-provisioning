@@ -5,8 +5,6 @@ metadata:
   namespace: oraex-cicd
   labels:
     app: nexus
-    app.kubernetes.io/component: nexus
-    app.kubernetes.io/instance: nexus
 spec:
   host: nexus-oraex-cicd.apps.middleware.rhbr-lab.com
   to:
