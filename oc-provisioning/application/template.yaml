@@ -4,8 +4,6 @@ labels:
   template: cicd
   group: cicd
 metadata:
-  annotations:
-    tags: instant-app,nexus,cicd
   name: cicd
 objects:
 - apiVersion: v1
