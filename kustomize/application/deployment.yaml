@@ -4,7 +4,6 @@ metadata:
   labels:
     app: nexus
   name: nexus-deployment
-  namespace: oraex-cicd
 spec:
   progressDeadlineSeconds: 600
   replicas: 1

@@ -4,7 +4,6 @@ metadata:
   labels:
     app: nexus
   name: nexus-svc
-  namespace: oraex-cicd
 spec:
   ports:
   - name: 8081-tcp
