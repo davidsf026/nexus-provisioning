@@ -5,7 +5,6 @@ metadata:
   labels:
     app: nexus
 spec:
-  host: nexus-oraex-cicd.apps.middleware.rhbr-lab.com
   to:
     kind: Service
     name: nexus-svc
