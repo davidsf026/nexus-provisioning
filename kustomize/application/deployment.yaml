@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: nexus
-  name: nexus
+  name: nexus-deployment
   namespace: oraex-cicd
 spec:
   progressDeadlineSeconds: 600
