@@ -3,7 +3,7 @@ kind: ImageStream
 metadata:
   labels:
     app: nexus
-  name: nexus
+  name: nexus-repository-manager
 spec:
   tags:
   - from:
