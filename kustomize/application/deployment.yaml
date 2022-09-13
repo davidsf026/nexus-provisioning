@@ -43,4 +43,4 @@ spec:
       volumes:
       - name: nexus-volume-1
         persistentVolumeClaim:
-          claimName: nexus-pv
+          claimName: nexus-pvc
