@@ -1,7 +1,7 @@
 # Nexus Provisioning
 
 ## Requirements
-- Project with "oraex-cicd" name.
+- A Project in your cluster OpenShift cluster.
 
 ## Informations:
  - Nexus dashboard will be accessible in http://nexus-$YOUR_CICD_PROJECT_NAME.apps.middleware.rhbr-lab.com/nexus
@@ -16,7 +16,7 @@
 
 ## Deploy With Kustomize:
 
-    oc new-project oraex-cicd
+    oc new-project oqss-cicd
     git clone https://github.com/davidsf026/nexus-provisioning/
     oc apply -k ./nexus-provisioning/kustomize
 
