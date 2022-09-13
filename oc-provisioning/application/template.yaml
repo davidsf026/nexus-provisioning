@@ -1,0 +1,109 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+labels:
+  template: cicd
+  group: cicd
+metadata:
+  annotations:
+    tags: instant-app,nexus,cicd
+  name: cicd
+objects:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    labels:
+      app: nexus
+    name: nexus-pvc
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 2Gi
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    labels:
+      app: nexus
+    name: nexus-is
+  spec:
+    tags:
+    - from:
+        kind: DockerImage
+        name: registry.connect.redhat.com/sonatype/nexus-repository-manager:3.41.1-ubi-1
+      name: 3.41.1-ubi-1
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    labels:
+      app: nexus
+    name: nexus-deployment
+  spec:
+    progressDeadlineSeconds: 600
+    replicas: 1
+    revisionHistoryLimit: 10
+    selector:
+      matchLabels:
+        deployment: nexus
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: RollingUpdate
+    template:
+      metadata:
+        labels:
+          deployment: nexus
+      spec:
+        containers:
+        - image: sonatype/nexus
+          imagePullPolicy: IfNotPresent
+          name: nexus
+          ports:
+          - containerPort: 8081
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /sonatype-work
+            name: nexus-volume-1
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+        volumes:
+        - name: nexus-volume-1
+          persistentVolumeClaim:
+            claimName: nexus-pvc
+- apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: nexus
+    name: nexus-svc
+  spec:
+    ports:
+    - name: 8081-tcp
+      port: 8081
+      protocol: TCP
+      targetPort: 8081
+    selector:
+      deployment: nexus
+    sessionAffinity: None
+    type: ClusterIP
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    labels:
+      app: nexus
+    name: nexus
+  spec:
+    port:
+      targetPort: 8081-tcp
+    to:
+      kind: Service
+      name: nexus-svc
+      weight: 100
+    wildcardPolicy: None
