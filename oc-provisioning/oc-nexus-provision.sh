@@ -14,7 +14,20 @@ command.deploy()
 
 command.help()
 {
-	echo "To Do!"
+	echo
+	echo "Usage:"
+	echo " oc-nexus-provision.sh [command]"
+	echo
+	echo "Example:"
+	echo " oc-nexus-provision.sh help"
+	echo
+	echo "Example:"
+	echo " oc-nexus-provision.sh deploy --project-suffix mydemo"
+	echo
+	echo "COMMANDS:"
+	echo "   deploy                   Set up the demo projects and deploy demo apps"
+	echo "   help                     Show how to use the script"
+	echo
 }
 
 if [ "$1" = "help" ]
